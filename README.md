@@ -259,3 +259,6 @@ Classiは成績管理や資料の共有、掲示板機能などの学校教育�
 
 ## 画面遷移図
 https://www.figma.com/design/N01YTLcDFdZWvCudFjwyk7/Myapp_%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=r4aUUifkAK9pL53l-1
+
+## ER図
+![ER図](./docs/images/er_diagram.png)

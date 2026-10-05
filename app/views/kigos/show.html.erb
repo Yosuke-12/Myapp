@@ -1,0 +1,12 @@
+<% content_for(:title, @word.headword) %>
+<%= turbo_frame_tag "word_detail" do %>
+  <div class="word-detail">
+      <h1><%= @word.headword %></h1>
+      <div class="definition">
+        <b>季節</b>：<%= @word.season %><br>
+        <b>意味</b>：<%= @word.meaning %><br>
+        <b>作例</b>：<%= @word.example %><br>
+        <p class="word-author">作成者：<%= @word.user.name %></p>
+      </div>
+  </div>
+<% end %>

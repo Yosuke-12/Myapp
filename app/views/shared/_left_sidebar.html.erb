@@ -1,0 +1,21 @@
+<aside class="left_sidebar">
+  <div class="left_sidebar-inner">
+    <div class='left_sidebar-logo'>
+      <%= link_to root_path do %>
+        <span class='text-4xl font-serif font-bold text-gray-800 hover:text-blue-600'>Your歳時記</span>
+      <% end %>
+    </div>
+
+    <ul class="left_sidebar-list">
+      <% if @words.present? %>
+        <% @words.each do |word| %>
+          <li class="left_sidebar-item">
+            <%= link_to word.headword, kigo_path(word), class: "left_sidebar-link", data: { turbo_frame: "word_detail" } %>
+          </li>
+        <% end %>
+      <% else %>
+        <li class="left_sidebar-empty">検索結果がありません</li>
+      <% end %>
+    </ul>
+  </div>
+</aside>

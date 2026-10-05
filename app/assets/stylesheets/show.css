@@ -1,0 +1,25 @@
+.word-detail {
+  max-width: 1000px;
+  margin: 0;
+  padding: 18px;
+}
+
+.word-detail h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.definition {
+  background-color: #f9f9f9;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #864A2B;
+  margin-top: 0rem;
+}
+
+.word-author {
+  text-align: right;
+}

@@ -16,8 +16,17 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
-
+  
   <body>
-    <%= yield %>
+    <div class="layout-container">
+      <%= render 'shared/left_sidebar' %>
+      
+      <main class="main-content">
+        <%= render 'shared/search' %>
+        <%= yield %>
+      </main>
+
+      <%= render 'shared/right_sidebar' %>
+    </div>
   </body>
 </html>

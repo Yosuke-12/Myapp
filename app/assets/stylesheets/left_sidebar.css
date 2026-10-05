@@ -1,0 +1,89 @@
+.left_sidebar {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 256px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: none;  /* 👈 この行で境界線を追加 */
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  overflow-y: hidden;
+  z-index: 1000;
+}
+
+.left_sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 24px 16px;
+  box-sizing: border-box;
+}
+
+.left_sidebar-logo {
+  margin-bottom: 24px;  /* ロゴと次の要素の間隔 */
+  text-align: center;   /* ロゴを中央揃え */
+  flex-shrink: 0;
+}
+
+.left_sidebar-list {
+  list-style: none;
+  flex: 1;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  margin-right: -16px;
+}
+
+.left_sidebar-item {
+  margin-bottom: 0px;
+}
+
+.left_sidebar-link {
+  display: block;
+  padding: 3px 12px;
+  color: #333333;
+  text-decoration: none;
+  border-radius: 0px; /* 角丸をやめて隙間なく連続させる */
+  font-size: 18px;
+  line-height: 1.4;
+  white-space: normal;
+  overflow: visible;
+  transition: all 0.2s;
+}
+
+.left_sidebar-item:nth-child(even) .sidebar-link {
+    background-color: #e3f4ec;
+}
+
+.left_sidebar-item .left_sidebar-link:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
+}
+
+.left_sidebar-item:nth-child(even) .left_sidebar-link.active,
+.left_sidebar-item:nth-child(odd) .left_sidebar-link.active {
+  background-color: #34414a;
+  color: #f1f5f9;
+  font-weight: 500;
+}
+
+.left_sidebar-empty {
+    padding: 8px 12px;
+    color: #b0b0b0;
+    font-size: 18px;
+    user-select: none;
+}
+
+/* スクロールバーのカスタマイズ */
+.left_sidebar-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.left_sidebar-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.left_sidebar-list::-webkit-scrollbar-thumb {
+  background: #909090bb;
+  border-radius: 4px;
+}

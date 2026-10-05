@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@import "./layout.css";
+@import "./search.css";
+@import "./left_sidebar.css";
+@import "./right_sidebar.css";
+@import "./show.css";

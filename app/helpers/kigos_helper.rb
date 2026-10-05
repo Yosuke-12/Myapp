@@ -1,0 +1,2 @@
+module KigosHelper
+end

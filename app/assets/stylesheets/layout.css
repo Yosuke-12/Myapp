@@ -1,0 +1,58 @@
+.layout-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 4px; /* ヘッダーの高さ分 */
+  background-color: white;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 256px; /* サイドバーの幅分 */
+  margin-right: 256px;
+  overflow-y: auto;
+  padding: 12px;
+  min-height: 100vh;
+}
+
+/* スクロールバーのカスタマイズ */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: #909090bb;
+  border-radius: 4px;
+}
+
+/* ========================================
+   レスポンシブ対応
+======================================== */
+@media (max-width: 768px) {
+  .left_sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+  
+  .left_sidebar.is-open {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .right_sidebar {
+    transform: translateX(100%);
+    transition: transform 0.3s;
+  }
+  
+  .right_sidebar.is-open {
+    transform: translateX(0);
+  }
+}

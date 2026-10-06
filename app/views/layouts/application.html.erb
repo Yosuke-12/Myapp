@@ -22,7 +22,13 @@
       <%= render 'shared/left_sidebar' %>
       
       <main class="main-content">
-        <%= render 'shared/search' %>
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>">
+            <%= message %>
+          </div>
+        <% end %>
+
+        <%= render 'shared/search' unless content_for?(:hide_search) %>
         <%= yield %>
       </main>
 

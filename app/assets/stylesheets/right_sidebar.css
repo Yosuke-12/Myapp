@@ -19,14 +19,6 @@
   box-sizing: border-box;
 }
 
-.right_sidebar-title {
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333333;
-  margin-bottom: 16px;
-}
-
 /* 1. ボタンを中央揃えにして下側に区切り線を入れるコンテナ */
 .right_sidebar-auth-links {
   display: flex;

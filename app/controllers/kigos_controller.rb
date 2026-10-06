@@ -12,4 +12,8 @@ class KigosController < ApplicationController
   def show
     @word = Kigo.find(params[:id])
   end
+
+  def new
+    @kigo = Kigo.new
+  end
 end

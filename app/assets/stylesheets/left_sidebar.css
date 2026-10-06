@@ -51,7 +51,7 @@
   transition: all 0.2s;
 }
 
-.left_sidebar-item:nth-child(even) .sidebar-link {
+.left_sidebar-item:nth-child(even) .left_sidebar-link {
     background-color: #e3f4ec;
 }
 

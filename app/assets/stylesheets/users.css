@@ -1,0 +1,54 @@
+/* フォームのコンテナ */
+.form-container {
+  width: 100%;
+  max-width: 500px; /* 登録フォームは検索より幅を狭めに */
+  margin: 2rem auto; /* 中央配置 */
+}
+
+/* 各入力項目のグループ */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* ラベル */
+.form-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* 入力欄（text, password共通） */
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1.1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box; /* paddingを含めてwidth: 100%にする */
+  transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+  border-color: #007bff;
+}
+
+/* 登録ボタン */
+.form-container input[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: #0056b3;
+}

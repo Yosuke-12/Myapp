@@ -22,6 +22,7 @@
 /* 1. ボタンを中央揃えにして下側に区切り線を入れるコンテナ */
 .right_sidebar-auth-links {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-bottom: 24px;         /* ボタンの下側に余白を作る */
@@ -31,7 +32,7 @@
 }
 
 /* 2. ログイン・ログアウトボタン共通のスタイル */
-.btn-login, .btn-logout {
+.btn-login, .btn-logout, .btn-user, .btn-kigo {
   display: inline-block;
   text-align: center;
   text-decoration: none;   /* リンクの下線を消す */
@@ -45,14 +46,14 @@
 }
 
 /* 3. ログインボタンのデザイン（枠線つき） */
-.btn-login {
+.btn-login, .btn-logout, .btn-user, .btn-kigo {
   color: #333333;          /* 文字色をタイトルの色と統一 */
   border: 1px solid #cccccc; /* 主張しすぎない薄めの枠線 */
   background-color: transparent;
 }
 
 /* ログインボタンをホバーしたとき */
-.btn-login:hover {
+.btn-login:hover, .btn-logout:hover, .btn-user:hover, .btn-kigo:hover {
   background-color: #f5f5f5; /* 背景をうっすらグレーにする */
   border-color: #333333;     /* 枠線を濃くする */
 }

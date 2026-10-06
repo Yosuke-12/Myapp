@@ -5,15 +5,15 @@ class LoginsController < ApplicationController
     user = User.find_by(student_id: params[:student_id])
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path, notice: 'ログインしました'
+      redirect_to root_path, notice: "ログインしました"
     else
-      flash.now[:alert] = 'ログインに失敗しました'
-      render 'new', status: :unprocessable_entity
+      flash.now[:alert] = "ログインに失敗しました"
+      render "new", status: :unprocessable_entity
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: 'ログアウトしました'
+    redirect_to root_path, notice: "ログアウトしました"
   end
 end

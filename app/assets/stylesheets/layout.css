@@ -15,6 +15,15 @@
   min-height: 100vh;
 }
 
+.alert {
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+.alert-success, .alert-notice { color: #155724; background-color: #d4edda; border-color: #c3e6cb; }
+.alert-danger,  .alert-alert  { color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; }
+
 /* スクロールバーのカスタマイズ */
 .main-content::-webkit-scrollbar {
   width: 8px;

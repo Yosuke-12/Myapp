@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-  # GET /users/new
+  before_action :set_user, only: %i[ show ]
+  
+  def show; end
+
   def new
     @user = User.new
   end
@@ -15,10 +18,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+    reset_session
+    redirect_to root_path, notice: "ユーザー情報を削除しました"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = current_user
     end
 
     # Only allow a list of trusted parameters through.

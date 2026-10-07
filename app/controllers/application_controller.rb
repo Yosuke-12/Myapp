@@ -4,6 +4,13 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def require_login
+    unless current_user
+      flash[:danger] = "ログインしてください"
+      redirect_to new_login_path
+    end
+  end
+
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
 

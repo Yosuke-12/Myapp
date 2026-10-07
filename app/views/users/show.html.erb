@@ -1,0 +1,54 @@
+<% content_for :hide_search, true %>
+<h1 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900"><%= @user.name %> さんの登録情報</h1>
+<div class="current_user-container">
+  <table class="profile-table">
+    <tbody>
+      <tr>
+        <th scope="row"><%= "名前" %></th>
+        <td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <th scope="row"><%= "学籍番号" %></th>
+        <td><%= @user.student_id %></td>
+      </tr>
+      <tr>
+        <th scope="row"><%= "作成日時" %></th>
+        <td><%= @user.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="delete-button-wrapper">
+  <%= link_to t('defaults.delete'), user_path(@user), data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') }, class: 'delete-button' %>
+  </div>
+</div>
+
+<h1 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">登録した季語一覧</h1>
+<div class="current_user_kigos-container">
+  <table class="current_user_kigos_table">
+    <thead>
+      <tr>
+        <th scope="row"><%= "見出し語" %></th>
+        <th scope="row"><%= "作成日時" %></th>
+        <th scope="row"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @user.kigos.present? %>
+        <% @user.kigos.each do |kigo| %>
+          <tr>
+            <td><%= kigo.headword %></td>
+            <td><%= l kigo.created_at, format: :long %></td>
+            <td class="action-buttons">
+              <%= link_to t('defaults.edit'), edit_kigo_path(kigo), class: 'edit-button' %>
+              <%= link_to t('defaults.delete'), kigo_path(kigo), data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') }, class: 'delete-button' %>
+            </td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td colspan="3">登録された季語がありません。</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show ]
+  before_action :set_user, only: %i[ show destroy]
+  before_action :require_login, only: %i[show]
 
   def show; end
 
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
+    current_user.destroy
     reset_session
     redirect_to root_path, notice: "ユーザー情報を削除しました"
   end

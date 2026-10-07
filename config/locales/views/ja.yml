@@ -1,4 +1,10 @@
 ja:
+  defaults:
+    edit: 編集
+    delete: 削除
+    delete_confirm: 本当に削除しますか？
+    flash_message:
+      deleted: "%{item}を削除しました"
   helpers:
     submit:
       create: 登録

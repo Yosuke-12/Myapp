@@ -1,9 +1,10 @@
 <%= form_with(model: kigo) do |form| %>
   <div class="form-container">
     <% if kigo.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(kigo.errors.count, "error") %> prohibited this user from being saved:</h2>
-        <ul>
+      <div class="mb-6 rounded-md bg-red-50 p-4 border border-red-200">
+        <h2><%= kigo.errors.count %>件のエラーが発生しました:
+        </h2>
+        <ul class="mt-2 list-disc list-inside text-sm text-red-700 space-y-1">
           <% kigo.errors.each do |error| %>
             <li><%= error.full_message %></li>
           <% end %>

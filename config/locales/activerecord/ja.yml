@@ -8,3 +8,8 @@ ja:
         student_id: 学籍番号
         password: パスワード
         password_confirmation: パスワード確認
+      kigo:
+        headword: 見出し語
+        season: 季節
+        meaning: 意味
+        example: 作例

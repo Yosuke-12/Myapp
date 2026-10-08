@@ -1,6 +1,6 @@
 class KigosController < ApplicationController
   before_action :require_login, only: [ :new, :create ]
-  before_action :set_kigo, only: %i[ destroy]
+  before_action :set_kigo, only: %i[ destroy edit update ]
 
   def index
     @words = if params[:search].present? # サイドバーの一覧表示用
@@ -28,6 +28,17 @@ class KigosController < ApplicationController
     else
       flash.now[:danger] = "季語の登録に失敗しました"
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @kigo.update(kigo_params)
+      redirect_to root_path, success: "季語の更新に成功しました"
+    else
+      flash.now[:danger] = "季語の更新に失敗しました"
+      render :edit, status: :unprocessable_entity
     end
   end
 

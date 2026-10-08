@@ -3,7 +3,7 @@
     <% if user.errors.any? %>
       <div class="mb-6 rounded-md bg-red-50 p-4 border border-red-200">
         <h2 class="text-sm font-medium text-red-800">
-          <%= pluralize(user.errors.count, "個のエラー") %> により、アカウントを保存できませんでした：
+          <%= user.errors.count %>個のエラーにより、アカウントを保存できませんでした：
         </h2>
         <ul class="mt-2 list-disc list-inside text-sm text-red-700 space-y-1">
           <% user.errors.each do |error| %>

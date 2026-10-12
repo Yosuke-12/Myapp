@@ -42,3 +42,35 @@
 .search-form input[type="submit"]:hover {
   background-color: #0056b3;
 }
+
+/* 検索対象のプルダウン */
+.search-form select {
+  padding: 0 1rem;
+  padding-right: 2.5rem; /* 矢印アイコン分の余白 */
+  font-size: 1.2rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  flex-shrink: 0; /* 縮まないようにする */
+  transition: border-color 0.3s;
+
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23555'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 1.2rem;
+}
+
+@media (max-width: 480px) {
+  .search-form {
+    flex-wrap: wrap; /* 画面が狭い時は折り返す */
+  }
+
+  .search-form select,
+  .search-form input[type="search"] {
+    flex: 1 1 100%; /* 幅いっぱいに広がる */
+  }
+}

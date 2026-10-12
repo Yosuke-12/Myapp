@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show destroy]
-  before_action :require_login, only: %i[show]
+  before_action :set_user, only: %i[ show destroy ]
+  before_action :require_login, only: %i[ show ]
 
   def show; end
 

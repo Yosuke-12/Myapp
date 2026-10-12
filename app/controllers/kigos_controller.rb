@@ -1,10 +1,12 @@
 class KigosController < ApplicationController
-  before_action :require_login, only: [ :new, :create ]
+  before_action :require_login, only: %i[ new create ]
   before_action :set_kigo, only: %i[ destroy edit update ]
 
   def index
+    @search_type = params[:search_type].presence_in(Kigo::SEARCHABLE_COLUMNS) || "headword"
+
     @words = if params[:search].present? # サイドバーの一覧表示用
-      Kigo.search_by_term(params[:search])
+      Kigo.search_by_term(params[:search], @search_type)
     else
       Kigo.none
     end

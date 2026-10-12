@@ -7,8 +7,8 @@ class Kigo < ApplicationRecord
 
   SEARCHABLE_COLUMNS = %w[headword season].freeze
   scope :search_by_term, ->(term, column = "headword") {
-    # ホワイトリストでカラム名を検証(SQLインジェクション対策として必須)
-    safe_column = column.to_s.in?(SEARCHABLE_COLUMNS) ? column : "headword"
-    where("#{safe_column} LIKE ?", "%#{sanitize_sql_like(term)}%")
+    # ホワイトリストでカラム名を検証
+    safe_column = SEARCHABLE_COLUMNS.include?(column.to_s) ? column.to_s : "headword"
+    where(arel_table[safe_column].matches("%#{sanitize_sql_like(term)}%", "\\"))
   }
 end

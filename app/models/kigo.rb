@@ -5,5 +5,10 @@ class Kigo < ApplicationRecord
   validates :meaning, presence: true
   validates :example, presence: true
 
-  scope :search_by_term, ->(term) { where("headword LIKE ?", "%#{sanitize_sql_like(term)}%") }
+  SEARCHABLE_COLUMNS = %w[headword season].freeze
+  scope :search_by_term, ->(term, column = "headword") {
+    # ホワイトリストでカラム名を検証(SQLインジェクション対策として必須)
+    safe_column = column.to_s.in?(SEARCHABLE_COLUMNS) ? column : "headword"
+    where("#{safe_column} LIKE ?", "%#{sanitize_sql_like(term)}%")
+  }
 end

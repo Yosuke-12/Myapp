@@ -31,7 +31,7 @@
   width: 100%;
 }
 
-/* 2. ログイン・ログアウトボタン共通のスタイル */
+/* 2. ボタン共通のスタイル */
 .btn-login, .btn-logout, .btn-user, .btn-kigo {
   display: inline-block;
   text-align: center;
@@ -45,14 +45,14 @@
   box-sizing: border-box;
 }
 
-/* 3. ログインボタンのデザイン（枠線つき） */
+/* 3. ボタンのデザイン（枠線つき） */
 .btn-login, .btn-logout, .btn-user, .btn-kigo {
   color: #333333;          /* 文字色をタイトルの色と統一 */
   border: 1px solid #cccccc; /* 主張しすぎない薄めの枠線 */
   background-color: transparent;
 }
 
-/* ログインボタンをホバーしたとき */
+/* ボタンをホバーしたとき */
 .btn-login:hover, .btn-logout:hover, .btn-user:hover, .btn-kigo:hover {
   background-color: #f5f5f5; /* 背景をうっすらグレーにする */
   border-color: #333333;     /* 枠線を濃くする */
@@ -65,4 +65,24 @@
   color: #666666;
   margin-bottom: 12px;
   text-align: center;
+}
+
+/* リンクのまとまり：縦並び＆最下部へ */
+.right_sidebar-static-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;   /* 残りの余白を上に取って一番下へ */
+  padding-left: 20px;
+}
+
+/* 各リンク */
+.right_sidebar-static-links .static-link {
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+/* ホバー */
+.right_sidebar-static-links .static-link:hover {
+  color: #1e90ff;
 }

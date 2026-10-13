@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'terms', to: 'static_pages#terms'
+  get 'privacy_policy', to: 'static_pages#privacy_policy'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :kigos
   resources :users, only: %i[new create show destroy]

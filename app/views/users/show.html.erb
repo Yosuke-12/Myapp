@@ -1,5 +1,6 @@
 <% content_for :hide_search, true %>
 <% content_for :title, "ユーザー情報" %>
+
 <h1 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900"><%= @user.name %> さんの登録情報</h1>
 <div class="current_user-container">
   <table class="profile-table">
@@ -19,11 +20,12 @@
     </tbody>
   </table>
   <div class="delete-button-wrapper">
-  <%= link_to t('defaults.delete'), user_path(@user), data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') }, class: 'delete-button' %>
+    <p>このユーザー情報を削除するには右のボタンを押してください。</p>
+    <%= link_to t('defaults.delete'), user_path(@user), data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') }, class: 'delete-button' %>
   </div>
 </div>
 
-<h1 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">登録した季語一覧</h1>
+<h1 class="mt-12 text-center text-3xl font-bold tracking-tight text-gray-900">登録した季語一覧</h1>
 <div class="current_user_kigos-container">
   <table class="current_user_kigos_table">
     <thead>

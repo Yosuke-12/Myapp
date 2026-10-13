@@ -6,9 +6,9 @@ class Kigo < ApplicationRecord
   validates :example, presence: true
 
   SEARCHABLE_COLUMNS = %w[headword season].freeze
-  scope :search_by_term, ->(term, column = "headword") {
+  scope :search_by_term, ->(term, column = "season") {
     # ホワイトリストでカラム名を検証
-    safe_column = SEARCHABLE_COLUMNS.include?(column.to_s) ? column.to_s : "headword"
+    safe_column = SEARCHABLE_COLUMNS.include?(column.to_s) ? column.to_s : "season"
     where(arel_table[safe_column].matches("%#{sanitize_sql_like(term)}%", "\\"))
   }
 end

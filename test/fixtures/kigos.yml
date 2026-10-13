@@ -4,8 +4,16 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+  headword: "お正月"
+  season: "新年"
+  meaning: "新しい年の始まりを祝う行事"
+  example: "お正月に家族で過ごす"
+  user: one
+
+two:
+  headword: "花火"
+  season: "夏"
+  meaning: "夏の夜空を彩る打ち上げ花火"
+  example: "花火大会に浴衣で出かける"
+  user: one

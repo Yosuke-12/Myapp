@@ -1,0 +1,45 @@
+.terms-content, .pp-content {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  h1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #111827;
+  }
+
+  h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #111827;
+  }
+
+  p {
+    text-indent: 1rem;
+  }
+
+  ul {
+    text-indent: 1rem;
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-top: 8px;
+  }
+
+  .legal-date {
+    text-align: right;
+    text-indent: 0;
+    margin-top: 1.5rem;
+  }
+}

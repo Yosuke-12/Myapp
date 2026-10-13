@@ -3,7 +3,7 @@ class KigosController < ApplicationController
   before_action :set_kigo, only: %i[ destroy edit update ]
 
   def index
-    @search_type = params[:search_type].presence_in(Kigo::SEARCHABLE_COLUMNS) || "headword"
+    @search_type = params[:search_type].presence_in(Kigo::SEARCHABLE_COLUMNS) || "season"
 
     @words = if params[:search].present? # サイドバーの一覧表示用
       Kigo.search_by_term(params[:search], @search_type)

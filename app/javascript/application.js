@@ -17,3 +17,26 @@ document.addEventListener("turbo:load", () => {
         link.classList.add("active");
     });
 });
+
+document.addEventListener("turbo:load", () => {
+  const overlay = document.querySelector("[data-sidebar-overlay]");
+  const closeAll = () => {
+    document.querySelectorAll(".left_sidebar, .right_sidebar")
+      .forEach(el => el.classList.remove("is-open"));
+    overlay?.classList.remove("is-open");
+  };
+
+  document.querySelectorAll("[data-toggle-sidebar]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const side = document.querySelector(`.${btn.dataset.toggleSidebar}_sidebar`);
+      const willOpen = !side.classList.contains("is-open");
+      closeAll();
+      if (willOpen) {
+        side.classList.add("is-open");
+        overlay?.classList.add("is-open");
+      }
+    });
+  });
+
+  overlay?.addEventListener("click", closeAll);
+});
